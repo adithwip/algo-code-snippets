@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home/component";
 import SumOfNum from "./pages/SumOfNum/component";
+import MultiplyOfNum from "./pages/MultiplyOfNum/component";
 
 WebFontLoader.load({
   google: {
@@ -22,6 +23,9 @@ const Routes = (
       </Route>
       <Route path="/sum-of-num">
         <SumOfNum />
+      </Route>
+      <Route path="/multiply-of-num">
+        <MultiplyOfNum />
       </Route>
     </Switch>
   </Router>

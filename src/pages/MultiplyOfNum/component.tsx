@@ -6,11 +6,11 @@ import Paragraph from "../../components/Paragraph/component";
 import Input from "../../components/Input/component";
 import TextBox from "../../components/TextBox/component";
 
-import { sumOfNum } from "../../services/sum/index";
+import { multiplyOfNum } from "../../services/multiply/index";
 
-import * as styles from "./sum-of-num.styles";
+import * as styles from "./multiply-of-num.styles";
 
-const SumOfNum: React.FC = () => {
+const MultiplyOfNum: React.FC = () => {
   const [a, setA] = useState(0);
   const [b, setB] = useState(0);
   const [result, setResult] = useState(0);
@@ -29,26 +29,27 @@ const SumOfNum: React.FC = () => {
   };
 
   const handleClick = () => {
-    const sum: number = sumOfNum(a, b);
+    const multiply: number = multiplyOfNum(a, b);
 
-    setResult(sum);
+    setResult(multiply);
   };
 
   return (
     <Flex flexDirection="column" pl={3} pr={3} mt={5} mb={5}>
       <Flex justifyContent="center">
-        <h1 css={styles.headerTitle}>Sum of Num</h1>
+        <h1 css={styles.headerTitle}>Multiplication of Num</h1>
       </Flex>
       <Flex mt={3} mb={4} align="center">
         <h3 css={styles.headerTitle}>
-          A function that returns the sum of 2 numbers as an argument.
+          A function that returns the result of multiplication from 2 numbers as
+          an argument.
         </h3>
       </Flex>
       <Flex>This will be a code block container</Flex>
       <Flex mt={3} flexDirection="column">
         <Paragraph size="1.2rem" mb={3}>
-          Given two numbers as arguments, the function will sum the two numbers
-          and return the new number of that sum.
+          Given two numbers as arguments, the function will multiply the two
+          numbers and return the new number of that multiplication.
         </Paragraph>
         <Paragraph size="1.2rem">
           Expected arguments to be given are numbers. Because we use TypeScript,
@@ -81,4 +82,4 @@ const SumOfNum: React.FC = () => {
   );
 };
 
-export default SumOfNum;
+export default MultiplyOfNum;

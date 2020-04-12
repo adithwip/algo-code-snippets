@@ -1,8 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
+import WebFontLoader from "webfontloader";
+
+import "./index.css";
+import App from "./components/App/component";
+
+WebFontLoader.load({
+  google: {
+    families: ["Bungee Inline:400:latin", "Montserrat:500,700:latin"],
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>

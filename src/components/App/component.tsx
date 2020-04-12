@@ -1,8 +1,8 @@
 import React from "react";
 import logo from "../../logo.svg";
 
-import "./App.css";
-import Header from "../Header";
+import "./app.css";
+import Header from "../Header/component";
 
 function App() {
   return (

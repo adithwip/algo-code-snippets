@@ -2,9 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import WebFontLoader from "webfontloader";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./index.css";
-import App from "./components/App/component";
+import Home from "./pages/Home/component";
+import SumOfNum from "./pages/SumOfNum/component";
+import MultiplyOfNum from "./pages/MultiplyOfNum/component";
+import PrimeNumberSequence from "./pages/PrimeNumberSequence/component";
+import FibonacciSequence from "./pages/FibonacciSequence/components";
 
 WebFontLoader.load({
   google: {
@@ -12,10 +17,30 @@ WebFontLoader.load({
   },
 });
 
+const Routes = (
+  <Router>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/sum-of-num">
+        <SumOfNum />
+      </Route>
+      <Route path="/multiply-of-num">
+        <MultiplyOfNum />
+      </Route>
+      <Route path="/prime-number-sequence">
+        <PrimeNumberSequence />
+      </Route>
+      <Route path="/fibonacci-number-sequence">
+        <FibonacciSequence />
+      </Route>
+    </Switch>
+  </Router>
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.StrictMode>{Routes}</React.StrictMode>,
   document.getElementById("root")
 );
 

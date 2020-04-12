@@ -4,32 +4,29 @@ import { css } from "@emotion/core";
 import "./header.css";
 
 type Props = {
-  children: React.ReactNode;
+  title?: string;
 };
+const titleDefVal: string = "Javascript Algos 30 Seconds of Code";
 
-const Header: React.FC<Props> = ({ children }) => {
+const Header: React.FC<Props> = ({ title = titleDefVal }) => {
   return (
-    <div
+    <header
       css={css`
+        background-color: #007acc;
+        padding: 1.6rem;
         text-align: center;
       `}
     >
-      <header
+      <span
         css={css`
-          background-color: #282c34;
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          font-family: "Bungee Inline";
-          font-size: calc(10px + 2vmin);
+          font-family: "Bungee Inline", sans-serif;
           color: white;
+          font-size: 2.4rem;
         `}
       >
-        {children}
-      </header>
-    </div>
+        {title}
+      </span>
+    </header>
   );
 };
 

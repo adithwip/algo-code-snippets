@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import withFooter from "../../components/Footer/component";
 import Flex from "../../components/Flex/component";
 import Button from "../../components/Button/component";
 import Paragraph from "../../components/Paragraph/component";
@@ -82,4 +83,4 @@ const MultiplyOfNum: React.FC = () => {
   );
 };
 
-export default MultiplyOfNum;
+export default withFooter(MultiplyOfNum);

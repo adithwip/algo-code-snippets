@@ -9,6 +9,7 @@ import Home from "./pages/Home/component";
 import SumOfNum from "./pages/SumOfNum/component";
 import MultiplyOfNum from "./pages/MultiplyOfNum/component";
 import PrimeNumberSequence from "./pages/PrimeNumberSequence/component";
+import FibonacciSequence from "./pages/FibonacciSequence/components";
 
 WebFontLoader.load({
   google: {
@@ -30,6 +31,9 @@ const Routes = (
       </Route>
       <Route path="/prime-number-sequence">
         <PrimeNumberSequence />
+      </Route>
+      <Route path="/fibonacci-number-sequence">
+        <FibonacciSequence />
       </Route>
     </Switch>
   </Router>

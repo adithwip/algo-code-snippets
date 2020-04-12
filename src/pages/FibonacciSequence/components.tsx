@@ -7,11 +7,11 @@ import Paragraph from "../../components/Paragraph/component";
 import Input from "../../components/Input/component";
 import TextBox from "../../components/TextBox/component";
 
-import { primeNumSequence } from "../../services/primeNumberSequence/index";
+import { findFibonacci } from "../../services/fibonacciSequence/index";
 
-import * as styles from "./prime-number-sequence.styles";
+import * as styles from "./fibonacci-sequence.styles";
 
-const PrimeNumberSequence: React.FC = () => {
+const FibonacciSequence: React.FC = () => {
   const [a, setA] = useState(0);
   const [result, setResult] = useState([0]);
 
@@ -20,27 +20,26 @@ const PrimeNumberSequence: React.FC = () => {
   };
 
   const handleClick = () => {
-    const primes: number[] = primeNumSequence(a);
+    const fibonaccis: number[] = findFibonacci(a);
 
-    setResult(primes);
+    setResult(fibonaccis);
   };
 
   return (
     <Flex flexDirection="column" pl={3} pr={3} mt={5} mb={5}>
       <Flex justifyContent="center">
-        <h1 css={styles.headerTitle}>Prime Number Sequence</h1>
+        <h1 css={styles.headerTitle}>Fibonacci Sequence</h1>
       </Flex>
       <Flex mt={3} mb={4} align="center">
         <h3 css={styles.headerTitle}>
-          A function that returns prime number sequence from n as maximum
-          distance.
+          A function that returns fibonacci sequence from n as maximum distance.
         </h3>
       </Flex>
       <Flex>This will be a code block container</Flex>
       <Flex mt={3} flexDirection="column">
         <Paragraph size="1.2rem" mb={3}>
-          Given a number as an argument. the function will find every prime
-          number and push it to an array and return it.
+          Given a number as an argument. the function will generate fibonacci
+          sequence and push it to an array and return it.
         </Paragraph>
         <Paragraph size="1.2rem">
           Expected an argument to be given is number. Because we use TypeScript,
@@ -61,4 +60,4 @@ const PrimeNumberSequence: React.FC = () => {
   );
 };
 
-export default withFooter(PrimeNumberSequence);
+export default withFooter(FibonacciSequence);

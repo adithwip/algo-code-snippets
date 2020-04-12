@@ -9,6 +9,6 @@ test("renders children inside Flex", () => {
     </Flex>
   );
 
-  const element = getByText(/children/i);
-  expect(element).toBeInTheDocument();
+  const childrenElement = getByText(/children/i);
+  expect(childrenElement).toBeInTheDocument();
 });

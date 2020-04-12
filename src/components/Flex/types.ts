@@ -45,6 +45,7 @@ export type FlexProps = {
   margin?: string;
   padding?: string;
   height?: number | string;
+  width?: number | string;
   minHeight?: string;
 
   m?: string | number;

@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/core";
-import styled from "@emotion/styled";
 import { space } from "styled-system";
+import styled from "@emotion/styled";
 
 import { FlexProps } from "./types";
 
@@ -23,6 +23,7 @@ const Flex: React.FC<FlexProps> = ({
   margin,
 
   align = "left",
+  width,
   height = "auto",
   minHeight = "initial",
 
@@ -43,6 +44,7 @@ const Flex: React.FC<FlexProps> = ({
     padding: ${padding};
     text-align: ${align};
     height: ${height};
+    width: ${width};
     min-height: ${minHeight};
   `;
 

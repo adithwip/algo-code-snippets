@@ -13,7 +13,7 @@ const Header: React.FC<Props> = ({ title = titleDefVal }) => {
     <header
       css={css`
         background-color: #007acc;
-        padding: 16px;
+        padding: 1.6rem;
         text-align: center;
       `}
     >

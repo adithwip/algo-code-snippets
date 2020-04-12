@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Header from "../../components/Header/component";
 import Flex from "../../components/Flex/component";
@@ -51,9 +50,11 @@ const Home: React.FC = () => {
         {pagesData.map((data) => {
           return (
             <Flex mb={3}>
-              <Link to={data.slug}>
-                <Card title={data.title} description={data.description} />
-              </Link>
+              <Card
+                to={data.slug}
+                title={data.title}
+                description={data.description}
+              />
             </Flex>
           );
         })}

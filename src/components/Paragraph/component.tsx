@@ -1,23 +1,31 @@
 import React from "react";
 import { css } from "@emotion/core";
+import { space } from "styled-system";
+import styled from "@emotion/styled";
 
-type Props = {
-  children: React.ReactNode;
-  textAlign?: "left" | "right" | "center" | "justify" | "initial" | "inherit";
-};
+import { ParagraphProps } from "./types";
 
-const Paragraph: React.FC<Props> = ({ children, textAlign }) => {
+const Box = styled.p`
+  ${space}
+`;
+
+const Paragraph: React.FC<ParagraphProps> = ({
+  children,
+  textAlign,
+  size = "1.4rem",
+  ...rest
+}) => {
   return (
-    <p
+    <Box
       css={css`
         text-align: ${textAlign};
         font-family: "Montserrat", sans-serif;
-        font-size: 1.4rem;
-        margin: 0;
+        font-size: ${size};
       `}
+      {...rest}
     >
       {children}
-    </p>
+    </Box>
   );
 };
 

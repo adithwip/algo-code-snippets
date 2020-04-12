@@ -8,3 +8,17 @@ html {
 * {
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:focus,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+  color: black;
+}

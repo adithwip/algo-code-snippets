@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import WebFontLoader from "webfontloader";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./index.css";
-import App from "./components/App/component";
+import Home from "./pages/Home/component";
+import SumOfNum from "./pages/SumOfNum/component";
 
 WebFontLoader.load({
   google: {
@@ -12,10 +14,25 @@ WebFontLoader.load({
   },
 });
 
+function About() {
+  return <h2>About</h2>;
+}
+
+const Routes = (
+  <Router>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/sum-of-num">
+        <SumOfNum />
+      </Route>
+    </Switch>
+  </Router>
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.StrictMode>{Routes}</React.StrictMode>,
   document.getElementById("root")
 );
 

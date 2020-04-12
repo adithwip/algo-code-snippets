@@ -8,6 +8,7 @@ import "./index.css";
 import Home from "./pages/Home/component";
 import SumOfNum from "./pages/SumOfNum/component";
 import MultiplyOfNum from "./pages/MultiplyOfNum/component";
+import PrimeNumberSequence from "./pages/PrimeNumberSequence/component";
 
 WebFontLoader.load({
   google: {
@@ -26,6 +27,9 @@ const Routes = (
       </Route>
       <Route path="/multiply-of-num">
         <MultiplyOfNum />
+      </Route>
+      <Route path="/prime-number-sequence">
+        <PrimeNumberSequence />
       </Route>
     </Switch>
   </Router>

@@ -19,6 +19,7 @@ const TextBox: React.FC<TextBoxProps> = ({ children, ...rest }) => {
         border-radius: 0.4rem;
         border: 0.1rem solid black;
         width: 100%;
+        overflow: auto;
       `}
       {...rest}
     >

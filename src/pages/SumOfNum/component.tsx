@@ -6,10 +6,26 @@ import Button from "../../components/Button/component";
 import Paragraph from "../../components/Paragraph/component";
 import Input from "../../components/Input/component";
 import TextBox from "../../components/TextBox/component";
+import PrismJS from "../../components/PrismJS/components";
 
 import { sumOfNum } from "../../services/sum/index";
 
 import * as styles from "./sum-of-num.styles";
+
+const tsCode: string = `
+function sumOfNum(
+  a: number,
+  b: number
+): number {
+  return a + b;
+};
+`.trim();
+
+const jsCode: string = `
+function sumOfNum(a, b) {
+  return a + b;
+};
+`.trim();
 
 const SumOfNum: React.FC = () => {
   const [a, setA] = useState(0);
@@ -40,12 +56,23 @@ const SumOfNum: React.FC = () => {
       <Flex justifyContent="center">
         <h1 css={styles.headerTitle}>Sum of Num</h1>
       </Flex>
+
       <Flex mt={3} mb={4} align="center">
         <h3 css={styles.headerTitle}>
           A function that returns the sum of 2 numbers as an argument.
         </h3>
       </Flex>
-      <Flex>This will be a code block container</Flex>
+
+      <Flex flexDirection="column">
+        <label>TypeScript</label>
+        <PrismJS code={tsCode} language="ts" plugins={["show-language"]} />
+      </Flex>
+
+      <Flex flexDirection="column">
+        <label>JavaScript</label>
+        <PrismJS code={jsCode} language="js" plugins={["show-language"]} />
+      </Flex>
+
       <Flex mt={3} flexDirection="column">
         <Paragraph size="1.2rem" mb={3}>
           Given two numbers as arguments, the function will sum the two numbers
@@ -57,6 +84,7 @@ const SumOfNum: React.FC = () => {
           other than a number, it will error.
         </Paragraph>
       </Flex>
+
       <Flex mt={5} flex={1}>
         <Flex flexDirection="column">
           <Input
@@ -75,6 +103,7 @@ const SumOfNum: React.FC = () => {
           <Button label="Run Code" onClick={handleClick} />
         </Flex>
       </Flex>
+
       <Flex mt={3}>
         <TextBox>{result}</TextBox>
       </Flex>

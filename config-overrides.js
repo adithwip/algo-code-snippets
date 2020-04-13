@@ -1,3 +1,6 @@
-const { override, addBabelPreset } = require("customize-cra");
+const { override, addBabelPreset, useBabelRc } = require("customize-cra");
 
-module.exports = override(addBabelPreset("@emotion/babel-preset-css-prop"));
+module.exports = override(
+  useBabelRc(),
+  addBabelPreset("@emotion/babel-preset-css-prop")
+);

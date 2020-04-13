@@ -25,3 +25,17 @@ a:active {
   text-decoration: none;
   color: black;
 }
+
+/* PrismJS */
+
+.code-toolbar {
+  width: 100%;
+}
+
+pre[class*="language-"] {
+  padding-left: 2.4rem !important;
+}
+
+code[class*="language-"] {
+  font-size: 1.2rem !important;
+}

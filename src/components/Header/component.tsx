@@ -1,8 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
 
-import "./header.css";
-
 type Props = {
   title?: string;
 };

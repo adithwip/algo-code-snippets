@@ -13,12 +13,14 @@ const isPrime = (n: number): boolean => {
 };
 
 export const primeNumSequence = (n: number): number[] => {
-  let primes: number[] = [];
+  const primes: number[] = [];
+  let count: number = 2;
 
-  for (let i = 2; i <= n; i++) {
-    if (isPrime(i)) {
-      primes.push(i);
+  while (primes.length < n) {
+    if (isPrime(count)) {
+      primes.push(count);
     }
+    count++;
   }
 
   return primes;
